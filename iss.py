@@ -56,11 +56,10 @@ def space_turtle():
         time.sleep(10)
 
 
-
-
-
 def main():
-    pass
+    people_in_space()
+    time_in_indy()
+    space_turtle()
 
 
 if __name__ == '__main__':
