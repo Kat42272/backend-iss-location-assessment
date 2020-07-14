@@ -14,6 +14,10 @@ def people_in_space():
     print(f"{person['number']} people in space")
 
 
+def iss_position():
+    retrieve = requests.get('http://api.open-notify.org/iss-now.json')
+    location_of_station = retrieve.json()
+    return location_of_station
 
 
 def main():
