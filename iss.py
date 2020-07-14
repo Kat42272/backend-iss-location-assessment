@@ -25,7 +25,7 @@ def iss_position():
 def time_in_indy():
     # Retrieves flight time of ISS over specific Lat/Long Coordinates
     retrieve = requests.get(
-        'http://api.open-notify.org/iss-pass.json?lat=39.768&lon=86.158')
+        'http://api.open-notify.org/iss-pass.json?lat=39.768&lon=-86.158')
     flight_time = retrieve.json()
     return time.ctime(flight_time["response"][1]["risetime"])
 
@@ -36,7 +36,7 @@ def space_turtle():
     display.setup(600, 400)
     display.bgpic("./map.gif")
     display.reset()
-    display.setworldcoordinates(-170, -85, 180, 90)
+    display.setworldcoordinates(-180, -90, 180, 90)
     display.addshape("iss.gif")
     display.title("ISS Position Locator")
 
@@ -46,7 +46,7 @@ def space_turtle():
     turtle.goto(-65, 70)
     turtle.color("green")
     turtle.write(time_in_indy(), font=("Arial", 15, "bold"))
-    turtle.goto(float(86.158), float(39.768))
+    turtle.goto(float(-86.158), float(39.768))
     turtle.dot(5, 'red')
 
     while True:
