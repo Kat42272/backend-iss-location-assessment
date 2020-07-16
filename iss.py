@@ -11,8 +11,9 @@ def people_in_space():
     retrieve = requests.get('http://api.open-notify.org/astros.json')
     space = retrieve.json()
     for person in space["people"]:
-        print(person["name"] + ",", person["craft"])
-    print(f"{person['number']} people in space")
+        print(person["name"] + "," + person["craft"])
+        print(f"{person['number']} people in space")
+    return
 
 
 def iss_position():
