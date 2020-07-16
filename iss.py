@@ -10,12 +10,15 @@ def people_in_space():
     # Retrieves list of people in space and their craft
     retrieve = requests.get('http://api.open-notify.org/astros.json')
     space = retrieve.json()
+
+    print("Total Astronauts in Space: ", space['number'])
+
     for person in space["people"]:
-        print(person["name"] + "," + person["craft"])
-        print(f"{person['number']} people in space")
-    return
-
-
+        print("Astronaut: {}, Spacecraft: {}".format(
+            person["name"],
+            person["craft"]
+        ))
+    
 def iss_position():
     # Retrieves location of ISS
     retrieve = requests.get('http://api.open-notify.org/iss-now.json')
