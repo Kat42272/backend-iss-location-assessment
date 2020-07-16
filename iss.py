@@ -2,9 +2,10 @@
 
 __author__ = "Kathryn Anderson with help from private tutor"
 
-import requests
+
 import turtle
 import time
+import requests
 
 def people_in_space():
     # Retrieves list of people in space and their craft
